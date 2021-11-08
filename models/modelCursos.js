@@ -1,12 +1,13 @@
 const db = require('../database/models');
 const { Curso } = require('../database/models');
 
-exports.createCurso = async (nomeCurso, ativo) => {
+exports.createCurso = (nomeCurso, ativo) => {
     
-    await db.Curso.create({
+   db.Curso.create({
         nomeCurso, ativo
     })
-};
+
+    };
 
 exports.searchCursos = async () => {
     

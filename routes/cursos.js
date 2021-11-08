@@ -13,6 +13,7 @@ router.get('/', async function(req, res, next) {
 router.get('/creatingcurso', function(req, res, next) {
        
   res.render('createcurso');
+  console.lot("uau git")
   
 });
 

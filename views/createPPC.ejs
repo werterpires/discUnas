@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+    
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+     
+    <div class="container">
+      <form method="POST" action="./createPPC">
+      Curso: <select name="cursoId">
+        <% allCursos.forEach(curso => { %>
+        <option value= "<%= curso.idCurso %>"> <%=curso.nomeCurso %> </option>
+        <% }) %>
+        </select>
+         Ano do voto: <input type="text" name="votoAno" id="votoAno">
+      Horas por crédito: <input type="datetime" name="horaCredito" id="horaCredito">
+      Data de início: <input type="date" name="inicioData" id="inicioData">
+      Data de fim: <input type="date" name="fimData" id="fimData">
+      
+      <input type="submit">
+      </form>
+    </div>
+    
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/cursos.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        <div class="cabecaDaTabela">
+          <div class="itemDaCabecaDaTabela" id="votoAno">Ano do voto</div>
+          <div class="itemDaCabecaDaTabela" id="horaCredito">Horas por crédito</div>
+          <div class="itemDaCabecaDaTabela" id="cursoId">Curso</div>
+          <div class="itemDaCabecaDaTabela" id="inicioData">Data de início</div>
+          <div class="itemDaCabecaDaTabela" id="fimoData">Data de fim</div>
+      </div>
+        <hr>
+
+        
+      <% allPPCs.forEach(pPC => { %>
+        <div class="colunaDaTabela">
+          <div class="itemDaColunaDaTabela" id="votoAnoPPC"> <%=pPC.votoAno %> </div>
+                 
+        </div>
+        <hr>
+      <% }) %>
+      
+        
+        <a href="/cursos/creatingcurso">Criar novo curso</a>
+        
+      </div>
+    </div>
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

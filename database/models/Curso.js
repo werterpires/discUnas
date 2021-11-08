@@ -13,9 +13,30 @@ module.exports = (sequelize, DataTypes) => {
     ativo:{
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    ppcAtual:{
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "cursosPlanosPedagogicos",
+        key: "idPPC",
+      },
+      onUpdate: "cascade",
+      onDelete: "cascade",
     }
     
    });
+
+   Curso.associate=(models)=>{
+     Curso.hasOne(models.CursoPlanoPedagogico, {
+       foreingKey:'ppcAtual',
+     })
+     Curso.hasMany(models.CursoPlanoPedagogico, {
+      foreingKey:'cursoId',
+      as: 'curso'
+    })
+
+   }
 
   
   return Curso;

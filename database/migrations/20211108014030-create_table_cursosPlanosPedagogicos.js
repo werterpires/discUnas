@@ -2,24 +2,32 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('cursos', { 
-      idCurso: {
+    await queryInterface.createTable('cursosPlanosPedagogicos', { 
+      idPPC: {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
         autoIncrement: true,
       },
-      nomeCurso:{
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      ativo:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      ppcAtual:{
-        type: Sequelize.INTEGER,
+      votoAno:{
+        type: Sequelize.DATEONLY,
         allowNull: true,
+      },
+      inicioDAta:{
+        type: Sequelize.DATEONLY,
+        allowNull: true,
+      },
+      fimData:{
+        type: Sequelize.DATEONLY,
+        allowNull: true,
+      },
+      horaCredito:{
+        type: Sequelize.TIME,
+        allowNull: true,
+      },
+      cursoId:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         type: 'TIMESTAMP',
@@ -35,6 +43,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('cursos');
+    await queryInterface.dropTable('cursosPlanosPedagogicos');
   }
 };
