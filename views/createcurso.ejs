@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+    
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+     
+    <div class="container">
+      <form method="POST" action="./createcurso">
+      <input type="text" name="nomeCurso" id="nomeCurso">
+      <select name="ativo">
+        <option value=1>Sim</option>
+        <option value=0>Não</option>
+      </select>
+      <input type="submit">
+      </form>
+    </div>
+    
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

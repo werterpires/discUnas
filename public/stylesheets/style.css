@@ -1,0 +1,124 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  background-color: #f2f2f2;
+}
+
+.logo {
+  height: 4vh;
+  
+}
+
+.botoesHeader{
+  display: flex;
+  align-items: center;
+
+}
+
+.botaoPequeno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  height: 3vh;
+  transform: rotate(328deg);
+  margin-right: vw;
+  background-color: black;
+  color: white;
+  border-radius:15px;
+  
+}
+
+.botaoGrande {
+  height: 8vh;
+  margin-left: 1vw;
+}
+
+
+
+
+.menusInferiores {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.menuInferior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+.iconeDeMenu {
+  height: 5vh;
+  padding-top: 2vh;
+}
+
+
+
+
+
+body {
+  margin:0 5vw 0;
+  background-color: #f2f2f2;
+}
+
+
+.container{
+  margin: 0 0 5vh;
+  min-height: 50vh;
+}
+
+.cabecaDaTabela {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2vh;
+}
+
+.itemDaCabecaDaTabela {
+  
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 6px 0;
+}
+
+.colunaDaTabela {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+  font-size:16px;
+}
+
+.itemDaColunaDaTabela {
+  
+  word-break: keep-all;
+  padding: 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+.inputMask {
+  border: 0;
+  background-color: #f2f2f2;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: medium;
+}
+
+.hideButton {
+  visibility: hidden;
+}
