@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const controllerCursos = require("../controllers/controllerCursos")
+const controllerCursosPlanosPedagogicos = require("../controllers/controllerCursosPlanosPedagogicos");
 
 router.get('/', async function(req, res, next) {
   
@@ -10,19 +11,22 @@ router.get('/', async function(req, res, next) {
 
 });
 
-router.get('/creatingcurso', function(req, res, next) {
-       
-  res.render('createcurso');
-  console.lot("uau git")
+router.get('/creatingcurso', async function(req, res, next) {
+
+  const allPPCs = await controllerCursosPlanosPedagogicos.searchPPCs();     
+  
+  res.render('createcurso', {allPPCs});
+  
   
 });
 
 router.post('/createcurso', async function(req, res, next) {
   
-  const{nomeCurso, ativo} = req.body;
+  const{ cursoNome, ativo, ppcAtual } = req.body;
+  
   
 
-  await controllerCursos.createCurso(nomeCurso, ativo);
+  await controllerCursos.createCurso(cursoNome, ativo, ppcAtual);
 
     
   res.redirect('/cursos');

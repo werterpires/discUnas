@@ -3,13 +3,13 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('cursos', { 
-      idCurso: {
+      cursoId: {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
         autoIncrement: true,
       },
-      nomeCurso:{
+      cursoNome:{
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -18,8 +18,9 @@ module.exports = {
         allowNull: false,
       },
       ppcAtual:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER.UNSIGNED,
         allowNull: true,
+        
       },
       createdAt: {
         type: 'TIMESTAMP',

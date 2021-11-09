@@ -3,7 +3,7 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <script defer src="/javascripts/cursos.js"></script>
+        <script defer src="/javascripts/pPCs.js"></script>
   </head>
   <body>
     
@@ -14,7 +14,7 @@
       <form method="POST" action="./createPPC">
       Curso: <select name="cursoId">
         <% allCursos.forEach(curso => { %>
-        <option value= "<%= curso.idCurso %>"> <%=curso.nomeCurso %> </option>
+        <option value= "<%= curso.cursoId %>"> <%=curso.cursoNome %> </option>
         <% }) %>
         </select>
          Ano do voto: <input type="text" name="votoAno" id="votoAno">

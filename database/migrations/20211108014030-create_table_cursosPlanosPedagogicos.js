@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('cursosPlanosPedagogicos', { 
-      idPPC: {
+     ppcID: {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull: true,
       },
-      inicioDAta:{
+      inicioData:{
         type: Sequelize.DATEONLY,
         allowNull: true,
       },
@@ -26,8 +26,14 @@ module.exports = {
         allowNull: true,
       },
       cursoId:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
+        references: {
+          model: "cursos",
+          key: "cursoId",
+        },
+        onUpdate: "no action",
+        onDelete: "no action",
       },
       createdAt: {
         type: 'TIMESTAMP',

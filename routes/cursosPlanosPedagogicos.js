@@ -7,19 +7,19 @@ router.get('/', async function(req, res, next) {
   
   const allPPCs = await controllerCursosPlanosPedagogicos.searchPPCs();
   
-  res.render('CursosPlanosPedagogicos', { allPPCs });
+  res.render('PPCs', { allPPCs });
 
 });
 
-router.get('/creatingPPC', async function(req, res, next) {
+router.get('/creatingppc', async function(req, res, next) {
 
   const allCursos = await controllerCursos.searchCursos();
-  res.render('createPPC', { allCursos });
+  res.render('createppc', { allCursos });
   
   
 });
 
-router.post('/createPPC', async function(req, res, next) {
+router.post('/createppc', async function(req, res, next) {
   
   const{votoAno, inicioDAta, fimData, horaCredito, cursoId} = req.body;
   

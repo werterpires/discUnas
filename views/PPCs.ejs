@@ -4,7 +4,7 @@
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
         <link rel='stylesheet' href='/stylesheets/cursos.css' />
-        <script defer src="/javascripts/cursos.js"></script>
+        <script defer src="/javascripts/pPCs.js"></script>
   </head>
   <body>
 
@@ -14,11 +14,11 @@
     <div class="container">
       <div class="princiapl">
         <div class="cabecaDaTabela">
-          <div class="itemDaCabecaDaTabela" id="votoAno">Ano do voto</div>
-          <div class="itemDaCabecaDaTabela" id="horaCredito">Horas por crédito</div>
-          <div class="itemDaCabecaDaTabela" id="cursoId">Curso</div>
-          <div class="itemDaCabecaDaTabela" id="inicioData">Data de início</div>
-          <div class="itemDaCabecaDaTabela" id="fimoData">Data de fim</div>
+          <div class="itemDaCabecaDaTabela" id="votoAnoTop">Ano do voto</div>
+          <div class="itemDaCabecaDaTabela" id="horaCreditoTop">Horas por crédito</div>
+          <div class="itemDaCabecaDaTabela" id="cursoIdTop">Curso</div>
+          <div class="itemDaCabecaDaTabela" id="inicioDataTop">Data de início</div>
+          <div class="itemDaCabecaDaTabela" id="fimDataTop">Data de fim</div>
       </div>
         <hr>
 
@@ -26,13 +26,17 @@
       <% allPPCs.forEach(pPC => { %>
         <div class="colunaDaTabela">
           <div class="itemDaColunaDaTabela" id="votoAnoPPC"> <%=pPC.votoAno %> </div>
+          <div class="itemDaColunaDaTabela" id="horaCredito"> <%=pPC.horaCredito %> </div>
+          <div class="itemDaColunaDaTabela" id="cursoId"> <%=pPC.cursoId %> </div>
+          <div class="itemDaColunaDaTabela" id="inicioData"> <%=pPC.inicioData %> </div>
+          <div class="itemDaColunaDaTabela" id="fimData"> <%=pPC.fimData %> </div>
                  
         </div>
         <hr>
       <% }) %>
       
         
-        <a href="/cursos/creatingcurso">Criar novo curso</a>
+        <a href="/PPCs/creatingppc">Criar novo PPC</a>
         
       </div>
     </div>

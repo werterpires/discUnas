@@ -11,12 +11,20 @@
     <%- include('partials/menusDePaginas.ejs') %>
      
     <div class="container">
+      
       <form method="POST" action="./createcurso">
-      <input type="text" name="nomeCurso" id="nomeCurso">
+      <input type="text" name="cursoNome" id="cursoNome">
       <select name="ativo">
         <option value=1>Sim</option>
         <option value=0>Não</option>
       </select>
+
+      <select name="ppcAtual">
+        <% allPPCs.forEach(ppc => { %>
+        <option value= "<%= ppc.ppcId %>"> <%=ppc.votoAno %> / <%=ppc.inicioData %>  </option>
+        <% }) %>
+      </select>
+
       <input type="submit">
       </form>
     </div>

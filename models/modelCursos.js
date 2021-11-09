@@ -1,10 +1,10 @@
 const db = require('../database/models');
 const { Curso } = require('../database/models');
 
-exports.createCurso = (nomeCurso, ativo) => {
-    
+exports.createCurso = (cursoNome, ativo, ppcAtual) => {
+   
    db.Curso.create({
-        nomeCurso, ativo
+        cursoNome, ativo, ppcAtual
     })
 
     };
@@ -13,7 +13,7 @@ exports.searchCursos = async () => {
     
     const allCursos = await db.Curso.findAll({
         order: [
-            ['nomeCurso', 'ASC']
+            ['cursoNome', 'ASC']
         ]
     });
     

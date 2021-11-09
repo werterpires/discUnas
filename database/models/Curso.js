@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Curso = sequelize.define('Curso', {
-    idCurso: {
+    cursoId: {
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       autoIncrement: true,
     },
-    nomeCurso:{
+    cursoNome:{
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,22 +21,18 @@ module.exports = (sequelize, DataTypes) => {
         model: "cursosPlanosPedagogicos",
         key: "idPPC",
       },
-      onUpdate: "cascade",
-      onDelete: "cascade",
+      onUpdate: "no action",
+      onDelete: "no action",
     }
     
    });
 
-   Curso.associate=(models)=>{
-     Curso.hasOne(models.CursoPlanoPedagogico, {
-       foreingKey:'ppcAtual',
-     })
-     Curso.hasMany(models.CursoPlanoPedagogico, {
-      foreingKey:'cursoId',
-      as: 'curso'
+   Curso.associate = (model) => {
+    Curso.hasMany(model.CursoPlanoPedagogico, {
+      foreignKey: 'cursoId',
+      as: 'ppcs'
     })
-
-   }
+  }
 
   
   return Curso;
