@@ -13,17 +13,13 @@
     <div class="container">
       
       <form method="POST" action="./createcurso">
-      <input type="text" name="cursoNome" id="cursoNome">
-      <select name="ativo">
+      Nome do curso: <input type="text" name="cursoNome" id="cursoNome"></br></br>
+      Curso está ativo? <select name="ativo">
         <option value=1>Sim</option>
         <option value=0>Não</option>
       </select>
 
-      <select name="ppcAtual">
-        <% allPPCs.forEach(ppc => { %>
-        <option value= "<%= ppc.ppcId %>"> <%=ppc.votoAno %> / <%=ppc.inicioData %>  </option>
-        <% }) %>
-      </select>
+      
 
       <input type="submit">
       </form>

@@ -27,10 +27,9 @@ module.exports = (sequelize, DataTypes) => {
     
    });
 
-   Curso.associate = (model) => {
-    Curso.hasMany(model.CursoPlanoPedagogico, {
+   Curso.associate = (models) => {
+    Curso.hasMany(models.CursoPlanoPedagogico, {
       foreignKey: 'cursoId',
-      as: 'ppcs'
     })
   }
 

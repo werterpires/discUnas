@@ -21,10 +21,10 @@ router.get('/creatingppc', async function(req, res, next) {
 
 router.post('/createppc', async function(req, res, next) {
   
-  const{votoAno, inicioDAta, fimData, horaCredito, cursoId} = req.body;
+  const{votoAno, inicioData, fimData, horaCredito, cursoId} = req.body;
   
   
-  await controllerCursosPlanosPedagogicos.createPPC(votoAno, inicioDAta, fimData, horaCredito, cursoId);
+  await controllerCursosPlanosPedagogicos.createPPC(votoAno, inicioData, fimData, horaCredito, cursoId);
 
     
   res.redirect('/PPCs');

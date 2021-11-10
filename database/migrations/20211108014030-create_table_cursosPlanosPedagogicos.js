@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('cursosPlanosPedagogicos', { 
-     ppcID: {
+      ppcId: {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,

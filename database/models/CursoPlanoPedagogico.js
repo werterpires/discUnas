@@ -38,11 +38,11 @@ module.exports = (sequelize, DataTypes) => {
     tableName: "cursosPlanosPedagogicos"
   });
 
-  CursoPlanoPedagogico.associate = (model) => {
-    CursoPlanoPedagogico.belongsTo(model.Curso, {
+  CursoPlanoPedagogico.associate = (models) => {
+    CursoPlanoPedagogico.belongsTo(models.Curso, {
       foreignKey: 'cursoId',
-      as: 'Curso'
     })
+  
   }
 
   
