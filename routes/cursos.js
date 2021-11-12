@@ -11,11 +11,11 @@ router.get('/', async function(req, res, next) {
 
 });
 
-router.get('/creatingcurso', async function(req, res, next) {
+router.get('/creatingcurso',  function(req, res, next) {
 
-  const allPPCs = await controllerCursosPlanosPedagogicos.searchPPCs();     
   
-  res.render('createcurso', {allPPCs});
+  
+  res.render('createcurso');
   
   
 });

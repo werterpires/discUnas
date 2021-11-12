@@ -122,3 +122,7 @@ hr {
 .hideButton {
   visibility: hidden;
 }
+
+.addbotao {
+  width: 3vw;
+}

@@ -2,8 +2,9 @@ const modelCursosPlanosPedagogicos = require("../models/modelCursosPlanosPedagog
 
 exports.createPPC = async (votoAno, inicioData, fimData, horaCredito, cursoId) => {
     
-    await modelCursosPlanosPedagogicos.createPPC(votoAno, inicioData, fimData, horaCredito, cursoId);
+    const ppcCriado = await modelCursosPlanosPedagogicos.createPPC(votoAno, inicioData, fimData, horaCredito, cursoId);
     
+    return ppcCriado
 }
 
 exports.searchPPCs =  async() => {
