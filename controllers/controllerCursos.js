@@ -12,3 +12,14 @@ exports.searchCursos =  () => {
     return allCursos;
     
 }
+
+exports.searchCurso =  (cursoId) => {
+    
+    cursoId.cursoId = Number(cursoId.cursoId);
+    
+
+    const curso =  modelCursos.searchCurso(cursoId);
+    
+    return curso
+    
+}

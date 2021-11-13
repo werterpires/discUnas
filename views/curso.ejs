@@ -13,30 +13,26 @@
 
     <div class="container">
       <div class="princiapl">
-        <div class="cabecaDaTabela">
-          <div class="itemDaCabecaDaTabela" id="nomeCursoTop">Nome do Curso</div>
-          <div class="itemDaCabecaDaTabela" id="ativoTop">Ativo</div>
-          <div class="itemDaCabecaDaTabela" id="ppcAtualTop">PPC Atual</div>
+        
+          <div><p>Nome do Curso: <%= curso.cursoNome %>  </p></p></div>
+            
+        
+            
+          <% if(curso.ativo == 1){ %>  
+            <div><p> Curso ativo  </p></div></br>
+          <% } %>
+          
       </div>
         <hr>
+        <% curso.CursoPlanoPedagogico.forEach(ppc => { %>
+          <div> Ano do voto: <%= ppc.votoAno %></div>
+          <div> Ano de início: <%= ppc.inicioData %></div>
+          <div> Horas por crédito: <%= ppc.horaCredito %></div> </br></br>
+        <% }) %>
+        
 
         
-      <% allCursos.forEach(curso => { %>
-        <div class="colunaDaTabela">
-          <div class="itemDaColunaDaTabela" id="nomeCurso"> <%=curso.cursoNome %> </div>
-          
-          <% if (curso.ativo == 1){ %>
-
-            <div class="itemDaColunaDaTabela" id="ativo"> Sim </div>
-          
-          <% }else { %>
-            <div class="itemDaColunaDaTabela" id="ativo"> Não </div>
-
-          <% } %>
-          <div class="itemDaColunaDaTabela" id="nomeCurso"> <%=curso.ppcAtual %> </div>
-        </div>
-        <hr>
-      <% }) %>
+      
       
       
         

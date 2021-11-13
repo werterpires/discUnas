@@ -6,8 +6,7 @@ exports.createCurso = (cursoNome, ativo, ppcAtual) => {
    db.Curso.create({
         cursoNome, ativo, ppcAtual
     })
-
-    };
+};
 
 exports.searchCursos = async () => {
     
@@ -17,7 +16,22 @@ exports.searchCursos = async () => {
         ]
     });
     
+    console.log(allCursos)
+
     return allCursos;
+}
+
+exports.searchCurso = async (cursoId) => {
+    
+    const curso = await db.Curso.findOne({
+        where: cursoId,
+        include:[
+            'CursoPlanoPedagogico'
+        ]        
+    });
+
     
 
+    
+    return curso;
 }

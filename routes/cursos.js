@@ -32,7 +32,15 @@ router.post('/createcurso', async function(req, res, next) {
   res.redirect('/cursos');
 });
 
+router.get('/:cursoId',  async function(req, res, next) {
 
+  const cursoId = req.params
+  
+  const curso = await controllerCursos.searchCurso(cursoId)
+  
+  res.render('curso', { curso });
+    
+});
 
 
 

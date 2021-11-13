@@ -8,6 +8,10 @@ header {
   background-color: #f2f2f2;
 }
 
+#nada{
+  width: 9vw;
+}
+
 .logo {
   height: 4vh;
   
@@ -125,4 +129,9 @@ hr {
 
 .addbotao {
   width: 3vw;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }

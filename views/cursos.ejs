@@ -23,13 +23,14 @@
         
       <% allCursos.forEach(curso => { %>
         <div class="colunaDaTabela">
-          <div class="itemDaColunaDaTabela" id="nomeCurso"> <%=curso.cursoNome %> </div>
+          <div class="itemDaColunaDaTabela" id="nomeCurso"> <a href="/cursos/<%= curso.cursoId %>"" ><%=curso.cursoNome %></a> </div>
           
           <% if (curso.ativo == 1){ %>
 
             <div class="itemDaColunaDaTabela" id="ativo"> Sim </div>
           
           <% }else { %>
+
             <div class="itemDaColunaDaTabela" id="ativo"> Não </div>
 
           <% } %>
