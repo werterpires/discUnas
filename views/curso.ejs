@@ -16,28 +16,24 @@
         
           <div><p>Nome do Curso: <%= curso.cursoNome %>  </p></p></div>
             
-        
-            
           <% if(curso.ativo == 1){ %>  
             <div><p> Curso ativo  </p></div></br>
           <% } %>
-          
-      </div>
-        <hr>
-        <% curso.CursoPlanoPedagogico.forEach(ppc => { %>
-          <div> Ano do voto: <%= ppc.votoAno %></div>
-          <div> Ano de início: <%= ppc.inicioData %></div>
-          <div> Horas por crédito: <%= ppc.horaCredito %></div> </br></br>
-        <% }) %>
-        
+          <hr>
 
+      </div>
         
-      
-      
-      
-        
-        <a href="/cursos/creatingcurso">Criar novo curso</a>
-        
+      <div class="ppcsCards">
+        <% curso.CursoPlanoPedagogico.forEach(ppc => { %>
+          <div class="ppcCard">
+            <a href="">
+              <div> Votado em: <%= ppc.votoAno %></div>              
+              <div> Horas por crédito: <%= ppc.horaCredito %></div> </br></br>
+              <div> <%= ppc.inicioData %> - <%= ppc.fimData %> </div>
+            </a>
+          </div>
+        <% }) %>
+         
       </div>
     </div>
     <footer>

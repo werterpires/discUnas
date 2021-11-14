@@ -3,6 +3,7 @@ var router = express.Router();
 const controllerCursosPlanosPedagogicos = require("../controllers/controllerCursosPlanosPedagogicos");
 const controllerCursos = require("../controllers/controllerCursos");
 const controllerEgressosPerfis = require("../controllers/controllerEgressosPerfis");
+const controllerCompetHabilidades = require("../controllers/controllerCompetHabilidades");
 
 
 router.get('/', async function(req, res, next) {
@@ -23,13 +24,14 @@ router.get('/creatingppc', async function(req, res, next) {
 
 router.post('/createppc', async function(req, res, next) {
   
-  const{votoAno, inicioData, fimData, horaCredito, cursoId, perfilNumero, perfil} = req.body;
+  const{votoAno, inicioData, fimData, horaCredito, cursoId, perfilNumero, perfil, competHabilidadeNumero, competHabilidade} = req.body;
   
   const ppcCriado = await controllerCursosPlanosPedagogicos.createPPC(votoAno, inicioData, fimData, horaCredito, cursoId);
 
   const {ppcId} = ppcCriado;
-  console.log("na model", perfilNumero, perfil)
+  
   await controllerEgressosPerfis.createPerfil(perfilNumero, perfil, ppcId)
+  await controllerCompetHabilidades.createCompetHabilidade(competHabilidadeNumero, competHabilidade, ppcId)
   
   res.redirect('/PPCs');
 });

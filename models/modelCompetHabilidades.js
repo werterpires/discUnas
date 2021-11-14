@@ -2,19 +2,27 @@ const db = require('../database/models');
 const { CompetHabilidade } = require('../database/models');
 
 
-exports.createCompetHabilidade = async (CompetHabilidadeId, CompetHabilidadeNumero, CompetHabilidade, ppcId) => {
-    
-    await db.CompetHabilidade.create({
-        CompetHabilidadeId, CompetHabilidadeNumero, CompetHabilidade, ppcId
-    })
-};
+exports.createCompetHabilidade = async (competHabilidadeNumero, competHabilidade, ppcId) => {
+   
+    if(Array.isArray(competHabilidadeNumero)){
+        for(idx=0; idx < competHabilidade.length; idx++){
+            await db.CompetHabilidade.create({
+                competHabilidadeNumero: competHabilidadeNumero[idx], competHabilidade: competHabilidade[idx], ppcId
+            })
+        }
+    }else{
+        await db.CompetHabilidade.create({
+            competHabilidadeNumero, CompetHabilidade, ppcId
+        })
+    }
+}
 
 exports.searchPPCCompetHabilidades = async (ppcId) => {
     
     const allPPCCompetHabilidades = await db.CompetHabilidade.findAll({
         where: {ppcId},
         order: [
-            ['CompetHabilidadeNumero', 'ASC']
+            ['competHabilidadeNumero', 'ASC']
         ],
         include: [
             'CursoPlanopedagogico'

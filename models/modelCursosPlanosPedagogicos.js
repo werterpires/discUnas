@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { CursoPlanoPedagogico } = require('../database/models');
+const { Curso } = require('../database/models');
 
 
 exports.createPPC = async (votoAno, inicioData, fimData, horaCredito, cursoId) => {
@@ -15,12 +16,13 @@ exports.createPPC = async (votoAno, inicioData, fimData, horaCredito, cursoId) =
 exports.searchPPCs = async () => {
     
     const allPPCs = await db.CursoPlanoPedagogico.findAll({
-        order: [
-            ['votoAno', 'DESC']
-        ],
         include: [
             'Curso'
-        ]   
+        ],   
+        order: [
+            [Curso, 'cursoNome', 'ASC'], ['votoAno', "DESC"]
+        ]
+        
     });
     
     

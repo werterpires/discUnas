@@ -1,12 +1,12 @@
 const modelCompetHabilidades = require("../models/modelCompetHabilidades");
 
-exports.createCompetHabilidade = async (CompetHabilidadeId, CompetHabilidadeNumero, CompetHabilidade, ppcId) => {
+exports.createCompetHabilidade = async (CompetHabilidadeNumero, CompetHabilidade, ppcId) => {
     
-    await modelCompetHabilidades.createCompetHabilidade(CompetHabilidadeId, CompetHabilidadeNumero, CompetHabilidade, ppcId);
+    await modelCompetHabilidades.createCompetHabilidade(CompetHabilidadeNumero, CompetHabilidade, ppcId);
     
 }
 
-exports.searchPPCCompetHabilidades =  async() => {
+exports.searchPPCCompetHabilidades =  async(ppcId) => {
     const allPPCCompetHabilidades =  await modelCompetHabilidades.searchPPCCompetHabilidades();
     
     

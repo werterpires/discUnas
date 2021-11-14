@@ -1,5 +1,7 @@
-let addBotao = document.querySelector(".addbotao");
+let addBotaoPerfil = document.querySelector(".addbotaoPerfil");
+let addBotaoCompetHabilidade = document.querySelector(".addbotaoCompetHabilidade");
 let perfilEspaco = document.querySelector(".perfilEspaco");
+let competHabilidadeEspaco = document.querySelector(".competHabilidadeEspaco");
 let iconeDeMenu = document.getElementById("iconeDePpcs");
 let textoDeMenu = document.getElementById("textoPPCs");
 let iconesDeMenu = document.querySelectorAll(".iconeDeMenu");
@@ -24,15 +26,34 @@ iconesDeMenu.forEach(icone => {
 
 });
 
-addBotao.addEventListener("mouseover", function(evento) {
-    addBotao.style.transform = "scale(1.2)"
+
+
+addBotaoPerfil.addEventListener("mouseover", function(evento) {
+    addBotaoPerfil.style.transform = "scale(1.2)"
 })
 
-addBotao.addEventListener("mouseout", function(evento) {
-    addBotao.style.transform = "scale(1)"
+addBotaoPerfil.addEventListener("mouseout", function(evento) {
+    addBotaoPerfil.style.transform = "scale(1)"
 })
 
-addBotao.addEventListener("click", function(evento) {
-    perfilEspaco.innerHTML += "<div> Numero do perfil<input type='text' name='perfilNumero' id='perfilNumero' class='perfilInput'> Perfil <input type='text' name='perfil' id='perfil' class='perfilInput'> </div>";
+addBotaoPerfil.addEventListener("click", function(evento) {
+    
+    
+    perfilEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='perfilNumero' id='perfilNumero' class='perfilInput'> Perfil: <input type='text' name='perfil' id='perfil' class='perfilInput'> </div>") ;
+    console.log(perfilEspaco)
+})
+
+addBotaoCompetHabilidade.addEventListener("mouseover", function(evento) {
+    addBotaoCompetHabilidade.style.transform = "scale(1.2)"
+})
+
+addBotaoCompetHabilidade.addEventListener("mouseout", function(evento) {
+    addBotaoCompetHabilidade.style.transform = "scale(1)"
+})
+
+addBotaoCompetHabilidade.addEventListener("click", function(evento) {
+    
+    
+    competHabilidadeEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='competHabilidadeNumero' id='competHabilidadeNumero' class='competHabilidadeInput'> Cometência/Habilidade: <input type='text' name='competHabilidade' id='competHabilidade' class='competHabilidadeInput'> </div>") ;
     console.log(perfilEspaco)
 })

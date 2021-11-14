@@ -127,7 +127,11 @@ hr {
   visibility: hidden;
 }
 
-.addbotao {
+.addbotaoPerfil {
+  width: 3vw;
+}
+
+.addbotaoCompetHabilidade {
   width: 3vw;
 }
 

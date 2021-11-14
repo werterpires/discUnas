@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Curso } = require('../database/models');
+const { CursoPlanoPedagogico } = require('../database/models');
 
 exports.createCurso = (cursoNome, ativo, ppcAtual) => {
    
@@ -16,8 +17,7 @@ exports.searchCursos = async () => {
         ]
     });
     
-    console.log(allCursos)
-
+   
     return allCursos;
 }
 
@@ -27,6 +27,9 @@ exports.searchCurso = async (cursoId) => {
         where: cursoId,
         include:[
             'CursoPlanoPedagogico'
+        ],
+        order: [
+            [CursoPlanoPedagogico, 'votoAno', 'DESC']
         ]        
     });
 
