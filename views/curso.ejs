@@ -25,13 +25,15 @@
         
       <div class="ppcsCards">
         <% curso.CursoPlanoPedagogico.forEach(ppc => { %>
+          <a href="/PPCs/<%= ppc.ppcId %>">
           <div class="ppcCard">
-            <a href="">
+            
               <div> Votado em: <%= ppc.votoAno %></div>              
               <div> Horas por crédito: <%= ppc.horaCredito %></div> </br></br>
               <div> <%= ppc.inicioData %> - <%= ppc.fimData %> </div>
-            </a>
+            
           </div>
+          </a>
         <% }) %>
          
       </div>

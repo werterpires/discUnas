@@ -36,7 +36,17 @@ router.post('/createppc', async function(req, res, next) {
   res.redirect('/PPCs');
 });
 
+router.get('/:ppcId',  async function(req, res, next) {
 
+  const ppcId = req.params
+  
+  const ppc = await controllerCursosPlanosPedagogicos.searchPPC(ppcId)
+  
+  console.log(ppc)
+
+  res.render('PPC', { ppc });
+    
+});
 
 
 

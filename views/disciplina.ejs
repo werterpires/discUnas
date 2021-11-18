@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/ppcs.css' />
+        <script defer src="/javascripts/ppcs.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        
+          <div class="cabecalho">
+            <p class="info1"> Curso: <%=ppc.Curso.cursoNome %> </p>
+            <p> Ano do PPC: <%= ppc.votoAno %> </p>
+          </div>
+          <div class="cabecalho">
+            <p class="info1">Hora por crédito: <%= ppc.horaCredito %>  </p>
+            <p>Período de atividade: De <%= ppc.inicioData %> até <%= ppc.fimData %>  </p>
+          </div>
+          <div></div>
+          <hr>
+        
+      </div>
+      <div class="secundario">
+        <div class="egressosPerfis">
+          <h3>Perfils de egressos</h3>
+          <% ppc.EgressoPerfil.forEach(perfil =>{ %>
+            
+            <div class="egressoPerfil">
+              <div class="numero"> <%= perfil.perfilNumero %>: </div>  <div> <%= perfil.perfil %> </div> 
+            </div>
+
+          <% }) %>
+        </div>
+        <div class="competHabilidades">
+          <h3>Competências e habilidades</h3>
+          <% ppc.CompetHabilidade.forEach(compet =>{ %>
+            
+            <div class="competHabilidade">
+              <div class="numero"> <%= compet.competHabilidadeNumero %>: </div>  <div> <%= compet.competHabilidade %> </div> 
+            </div>
+
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

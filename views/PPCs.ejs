@@ -24,14 +24,14 @@
 
         
       <% allPPCs.forEach(pPC => { %>
-        <div class="colunaDaTabela">
+        <a class="colunaDaTabela" href="/PPCs/<%= pPC.ppcId %>" >
           <div class="itemDaColunaDaTabela" id="cursoNome"> <%=pPC.Curso.cursoNome %> </div>
           <div class="itemDaColunaDaTabela" id="votoAno"> <%=pPC.votoAno %> </div>
           <div class="itemDaColunaDaTabela" id="horaCredito"> <%=pPC.horaCredito %> </div>
           <div class="itemDaColunaDaTabela" id="inicioData"> <%=pPC.inicioData %> </div>
           <div class="itemDaColunaDaTabela" id="fimData"> <%=pPC.fimData %> </div>
                  
-        </div>
+        </a>
         <hr>
       <% }) %>
       

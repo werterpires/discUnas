@@ -45,3 +45,25 @@
   text-align: center;
 }
 
+.cabecalho{
+  display:flex;
+}
+
+.info1{
+  width: 33vw;
+}
+
+.egressoPerfil{
+  display:flex;
+  margin-bottom: 0.1vw;
+}
+
+.competHabilidade{
+  display:flex;
+  margin-bottom: 0.1vw;
+
+}
+
+.numero{
+  width: 3vw;
+}

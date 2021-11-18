@@ -17,31 +17,29 @@
           <div class="itemDaCabecaDaTabela" id="nomeCursoTop">Nome do Curso</div>
           <div class="itemDaCabecaDaTabela" id="ativoTop">Ativo</div>
           <div class="itemDaCabecaDaTabela" id="ppcAtualTop">PPC Atual</div>
-      </div>
-        <hr>
-
-        
-      <% allCursos.forEach(curso => { %>
-        <div class="colunaDaTabela">
-          <div class="itemDaColunaDaTabela" id="nomeCurso"> <a href="/cursos/<%= curso.cursoId %>"" ><%=curso.cursoNome %></a> </div>
-          
-          <% if (curso.ativo == 1){ %>
-
-            <div class="itemDaColunaDaTabela" id="ativo"> Sim </div>
-          
-          <% }else { %>
-
-            <div class="itemDaColunaDaTabela" id="ativo"> Não </div>
-
-          <% } %>
-          <div class="itemDaColunaDaTabela" id="nomeCurso"> <%=curso.ppcAtual %> </div>
         </div>
         <hr>
-      <% }) %>
-      
-      
+
         
-        <a href="/cursos/creatingcurso">Criar novo curso</a>
+        <% allCursos.forEach(curso => { %>
+          <div class="colunaDaTabela">
+            <div class="itemDaColunaDaTabela" id="nomeCurso"> <a href="/cursos/<%= curso.cursoId %>"><%=curso.cursoNome %></a> </div>
+            
+            <% if (curso.ativo == 1){ %>
+
+              <div class="itemDaColunaDaTabela" id="ativo"> Sim </div>
+            
+            <% }else { %>
+
+              <div class="itemDaColunaDaTabela" id="ativo"> Não </div>
+
+            <% } %>
+            <div class="itemDaColunaDaTabela" id="nomeCurso"> <%=curso.ppcAtual %> </div>
+          </div>
+          <hr>
+        <% }) %>
+        
+          <a href="/cursos/creatingcurso">Criar novo curso</a>
         
       </div>
     </div>

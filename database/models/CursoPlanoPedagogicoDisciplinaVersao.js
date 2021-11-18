@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const CursoPlanoPedagogico = sequelize.define('CursoPlanoPedagogico', {
+  const CursoPlanoPedagogicoDisciplinaVersao = sequelize.define('CursoPlanoPedagogicoDisciplinaVersao', {
     ppcId: {
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED,
@@ -35,23 +35,19 @@ module.exports = (sequelize, DataTypes) => {
     
   },
   {
-    tableName: "cursosPlanosPedagogicos"
+    tableName: "cursosPlanosPedagogicosDisciplinasVersoes"
   });
 
-  CursoPlanoPedagogico.associate = (models) => {
-    CursoPlanoPedagogico.belongsTo(models.Curso, {
-      foreignKey: 'cursoId',
+  CursoPlanoPedagogicoDisciplinaVersao.associate = (models) => {
+    
+    CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.DisciplinaVersao, {
+      foreignKey: 'disciplinaVersaoId'
     }),
-    CursoPlanoPedagogico.hasMany(models.EgressoPerfil, {
-      foreignKey: 'ppcId',
-      as: "EgressoPerfil"
-    }),
-    CursoPlanoPedagogico.hasMany(models.CompetHabilidade, {
-      foreignKey: 'ppcId',
-      as: "CompetHabilidade"
-    })
-  
+    CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.CursoPlanoPedagogico, {
+      foreignKey: 'ppcId'
+    })  
   }
+
   
-  return CursoPlanoPedagogico;
+  return CursoPlanoPedagogicoDisciplinaVersao;
 };

@@ -23,11 +23,22 @@ exports.searchPPCs = async () => {
             [Curso, 'cursoNome', 'ASC'], ['votoAno', "DESC"]
         ]
         
-    });
-    
+    });    
     
     return allPPCs;
     
-
 }
 
+exports.searchPPC = async (ppcId) => {
+    
+    const ppc = await db.CursoPlanoPedagogico.findOne({
+        where: ppcId,
+        include: [
+            'Curso', 'CompetHabilidade', 'EgressoPerfil'
+        ],   
+                
+    });    
+    
+    return ppc;
+    
+}

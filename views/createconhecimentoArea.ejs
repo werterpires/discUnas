@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+    
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+     
+    <div class="container">
+      
+      <form method="POST" action="./createcurso">
+      Área do conhecimento: <input type="text" name="conhecimentoArea" id="conhecimentoArea"></br></br>
+      
+      <input type="submit">
+      </form>
+    </div>
+    
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

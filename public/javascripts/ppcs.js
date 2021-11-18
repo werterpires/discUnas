@@ -54,6 +54,6 @@ addBotaoCompetHabilidade.addEventListener("mouseout", function(evento) {
 addBotaoCompetHabilidade.addEventListener("click", function(evento) {
     
     
-    competHabilidadeEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='competHabilidadeNumero' id='competHabilidadeNumero' class='competHabilidadeInput'> Cometência/Habilidade: <input type='text' name='competHabilidade' id='competHabilidade' class='competHabilidadeInput'> </div>") ;
+    competHabilidadeEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='competHabilidadeNumero' id='competHabilidadeNumero' class='competHabilidadeInput'> Competência/Habilidade: <input type='text' name='competHabilidade' id='competHabilidade' class='competHabilidadeInput'> </div>") ;
     console.log(perfilEspaco)
 })

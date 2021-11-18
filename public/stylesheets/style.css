@@ -20,6 +20,7 @@ header {
 .botoesHeader{
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
 }
 
@@ -29,7 +30,6 @@ header {
   align-items: center;
   width: 7vw;
   height: 3vh;
-  transform: rotate(328deg);
   margin-right: vw;
   background-color: black;
   color: white;
@@ -138,4 +138,8 @@ hr {
 a{
   text-decoration: none;
   color: black;
+}
+
+p{
+  margin: 4px;
 }

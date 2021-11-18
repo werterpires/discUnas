@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/cursos.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        <div class="cabecaDaTabela">
+          <div class="itemDaCabecaDaTabela" id="nomeCursoTop">Áreas do conhecimento</div>
+        </div>
+        <hr>
+
+        
+        <% allConhecimentoAreas.forEach(conhecimentoArea => { %>
+          <div class="colunaDaTabela">
+            <div class="itemDaColunaDaTabela" id="conhecimentoArea"> <a href="/conhecimentoAreas/<%= conhecimentoArea.conhecimentoAreaId %>"><%=conhecimentoArea.conhecimentoArea %></a> </div>
+          </div>
+          <hr>
+        <% }) %>
+        
+          <a href="/conhecimentoAreas/creatingconhecimentoArea">Criar nova area de conhecimento</a>
+        
+      </div>
+    </div>
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

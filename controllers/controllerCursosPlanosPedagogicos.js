@@ -10,11 +10,13 @@ exports.createPPC = async (votoAno, inicioData, fimData, horaCredito, cursoId) =
 exports.searchPPCs =  async() => {
     const allPPCs =  await modelCursosPlanosPedagogicos.searchPPCs();
     
-    allPPCs.forEach(ppc => {
-        
-        
-    });
-
     return allPPCs;
+    
+}
+
+exports.searchPPC =  async(ppcId) => {
+    const ppc =  await modelCursosPlanosPedagogicos.searchPPC(ppcId);
+    
+    return ppc;
     
 }
