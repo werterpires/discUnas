@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   Disciplina.associate = (models) => {
     Disciplina.belongsTo(models.ConhecimentoArea, {
       foreignKey: 'conhecimentoAreaId',
+      as: 'conhecimentoArea'
     }),
     Disciplina.hasMany(models.DisciplinaVersao, {
       foreignKey: 'disciplinaId',

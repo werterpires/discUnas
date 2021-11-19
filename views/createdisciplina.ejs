@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script defer src="/javascripts/ppcs.js"></script>
+  </head>
+  <body>
+    
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+     
+    <div class="container">
+      <form method="POST" action="./createdisciplina">
+      
+      Disciplina: <input type="text" name="disciplinaNome" id="disciplinaNome">
+      
+      Área do conhecimento: <select name="conhecimentoAreaId">
+        <% allconhecimentoAreas.forEach(conhecimentoArea => { %>
+        <option value= "<%= conhecimentoArea.conhecimentoAreaId %>"> <%=conhecimentoArea.conhecimentoArea %> </option>
+        <% }) %>
+        </select>
+
+      </br>
+      </br>
+      
+      </br>
+            
+      <input type="submit">
+      </form>
+
+      <a href="/conhecimentoArea/creatingconhecimentoArea">Criar nova área do conhecimento</a>
+    </div>
+    
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>
