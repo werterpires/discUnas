@@ -1,7 +1,7 @@
 header {
   display: flex;
   align-items: center;
-  height: 15vh;
+  height: 10vh;
   justify-content: space-between;
   position: sticky;
   top: 0px;
@@ -14,7 +14,6 @@ header {
 
 .logo {
   height: 4vh;
-  
 }
 
 .botoesHeader{
@@ -41,9 +40,6 @@ header {
   height: 8vh;
   margin-left: 1vw;
 }
-
-
-
 
 .menusInferiores {
   display: flex;

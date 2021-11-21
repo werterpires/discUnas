@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: "conhecimentoAreas",
         key: "conhecimentoAreaId",
+        
       },
       onUpdate: "no action",
       onDelete: "cascade",
@@ -26,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   Disciplina.associate = (models) => {
     Disciplina.belongsTo(models.ConhecimentoArea, {
       foreignKey: 'conhecimentoAreaId',
-      as: 'conhecimentoArea'
+      as: 'ConhecimentoArea'
     }),
     Disciplina.hasMany(models.DisciplinaVersao, {
       foreignKey: 'disciplinaId',

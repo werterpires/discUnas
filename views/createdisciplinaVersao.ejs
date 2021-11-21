@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script defer src="/javascripts/disciplinas.js"></script>
+  </head>
+  <body>
+    
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+     
+    <div class="container">
+      <form method="POST" action="./createdisciplinaVersao">
+      
+      
+      
+      Disciplina: 
+      <select type="number" name="disciplinaId" id="disciplinaId">
+        <option>Escolha uma opção</option>
+        <% allDisciplinas.forEach(disciplina => { %>
+        <option value= "<%= disciplina.disciplinaId %>"> <%=disciplina.disciplinaNome %> </option>
+        <% }) %>
+      </select>
+
+      Sigla: <input type="text" name="sigla" id="sigla">
+      Código: <input type="text" name="codigo" id="codigo">
+      Créditos: <input type="text" name="creditoQuantidade" id="creditoQuantidade">
+      Ementa: <input type="text" name="ementa" id="ementa">
+      Bibliografia básica: <input type="text" name="basicBibliografia" id="basicBibliografia">
+      Bibliografia complementar: <input type="text" name="compBibliografia" id="compBibliografia">
+      Observação: <input type="text" name="observacao" id="observacao">
+      Versão de disciplina está ainda em oferta? 
+      <select name="emOferta" id="emOferta">
+        <option value=1>Sim</option>
+        <option value=0>Não</option>
+      </select>
+      
+      Versão de disciplina está produzida? 
+      <select name="produzido" id="produzido">
+        <option value=1>Sim</option>
+        <option value=0>Não</option>
+      </select>
+
+      </br>
+      </br>
+      
+      </br>
+            
+      <input type="submit">
+      </form>
+
+      <a href="/conhecimentoArea/creatingconhecimentoArea">Criar nova área do conhecimento</a>
+    </div>
+    
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

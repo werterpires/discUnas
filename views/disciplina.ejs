@@ -3,8 +3,8 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/ppcs.css' />
-        <script defer src="/javascripts/ppcs.js"></script>
+        <link rel='stylesheet' href='/stylesheets/disciplina.css' />
+        <script defer src="/javascripts/disciplinas.js"></script>
   </head>
   <body>
 
@@ -15,38 +15,17 @@
       <div class="princiapl">
         
           <div class="cabecalho">
-            <p class="info1"> Curso: <%=ppc.Curso.cursoNome %> </p>
-            <p> Ano do PPC: <%= ppc.votoAno %> </p>
+            <p class="info1"> Disciplina: <%=disciplina.disciplinaNome %> </p>
+            <p> Área do conhecimento: <%= disciplina.ConhecimentoArea.conhecimentoArea %> </p>
           </div>
-          <div class="cabecalho">
-            <p class="info1">Hora por crédito: <%= ppc.horaCredito %>  </p>
-            <p>Período de atividade: De <%= ppc.inicioData %> até <%= ppc.fimData %>  </p>
-          </div>
-          <div></div>
+          
+          
           <hr>
         
       </div>
       <div class="secundario">
         <div class="egressosPerfis">
-          <h3>Perfils de egressos</h3>
-          <% ppc.EgressoPerfil.forEach(perfil =>{ %>
-            
-            <div class="egressoPerfil">
-              <div class="numero"> <%= perfil.perfilNumero %>: </div>  <div> <%= perfil.perfil %> </div> 
-            </div>
-
-          <% }) %>
-        </div>
-        <div class="competHabilidades">
-          <h3>Competências e habilidades</h3>
-          <% ppc.CompetHabilidade.forEach(compet =>{ %>
-            
-            <div class="competHabilidade">
-              <div class="numero"> <%= compet.competHabilidadeNumero %>: </div>  <div> <%= compet.competHabilidade %> </div> 
-            </div>
-
-          <% }) %>
-        </div>
+        </div>  
       </div>
     </div>
 

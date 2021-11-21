@@ -3,7 +3,7 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/ppcs.css' />
+        <link rel='stylesheet' href='/stylesheets/disciplinas.css' />
         <script defer src="/javascripts/disciplinas.js"></script>
   </head>
   <body>
@@ -24,7 +24,7 @@
       <% allDisciplinas.forEach(disciplina => { %>
         <a class="colunaDaTabela" href="/disciplinas/<%= disciplina.disciplinaId %>" >
           <div class="itemDaColunaDaTabela" id="cursoNome"> <%=disciplina.disciplinaNome %> </div>
-          <div class="itemDaColunaDaTabela" id="votoAno"> <%=disciplina.conhecimentoArea.conhecimentoArea %> </div>                 
+          <div class="itemDaColunaDaTabela" id="votoAno"> <%=disciplina.ConhecimentoArea.conhecimentoArea %> </div>                 
         </a>
         <hr>
       <% }) %>

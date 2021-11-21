@@ -11,6 +11,7 @@ var cursosRouter = require('./routes/cursos');
 var cursosPlanosPedagogicosRouter = require('./routes/cursosPlanosPedagogicos');
 var conhecimentoAreasRouter = require('./routes/conhecimentoAreas');
 var disciplinasRouter = require('./routes/disciplinas');
+var disciplinasVersoesRouter = require('./routes/disciplinasVersoes');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/cursos', cursosRouter);
 app.use('/PPCs', cursosPlanosPedagogicosRouter);
 app.use('/conhecimentoAreas', conhecimentoAreasRouter);
 app.use('/disciplinas', disciplinasRouter);
+app.use('/disciplinasVersoes', disciplinasVersoesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

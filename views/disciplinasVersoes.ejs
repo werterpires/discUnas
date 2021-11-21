@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/disciplinasVersoes.css' />
+        <script defer src="/javascripts/disciplinas.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        <div class="cabecaDaTabela">
+          <div class="itemDaCabecaDaTabela" id="disciplinaNomeTop">Disciplina</div>
+          <div class="itemDaCabecaDaTabela" id="disciplinaVersaoNomeTop">Versão</div>
+          <div class="itemDaCabecaDaTabela" id="siglaTop">Sigla</div>
+          <div class="itemDaCabecaDaTabela" id="codigoTop">Código</div>
+          <div class="itemDaCabecaDaTabela" id="creditoQuantidadeTop">Créditos</div>
+          <div class="itemDaCabecaDaTabela" id="emOfertaTop">Em oferta</div>
+          <div class="itemDaCabecaDaTabela" id="produzidoTop">Produzida</div>
+      </div>
+        <hr>
+
+        
+      <% allDisciplinasVersoes.forEach(disciplinaVersao => { %>
+        <a class="colunaDaTabela" href="/disciplinasVersoes/<%= disciplinaVersao.disciplinaVersaoId %>" >
+          <div class="itemDaColunaDaTabela" id="disciplinaNome"> <%=disciplinaVersao.Disciplina.disciplinaNome %> </div>
+          <div class="itemDaColunaDaTabela" id="disciplinaVersaoNome"> <%=disciplinaVersao.disciplinaVersaoNome %> </div>
+          <div class="itemDaColunaDaTabela" id="sigla"> <%=disciplinaVersao.sigla %> </div>
+          <div class="itemDaColunaDaTabela" id="codigo"> <%=disciplinaVersao.codigo %> </div>
+          <div class="itemDaColunaDaTabela" id="creditoQuantidade"> <%=disciplinaVersao.creditoQuantidade %> </div>
+          
+            <% if (disciplinaVersao.emOferta == 1){ %>
+
+              <div class="itemDaColunaDaTabela" id="emOferta"> Sim </div>
+            
+            <% }else { %>
+
+              <div class="itemDaColunaDaTabela" id="emOferta"> Não </div>
+
+            <% } %>
+            <% if (disciplinaVersao.produzido == 1){ %>
+
+              <div class="itemDaColunaDaTabela" id="produzido"> Sim </div>
+            
+            <% }else { %>
+
+              <div class="itemDaColunaDaTabela" id="produzido"> Não </div>
+
+            <% } %>
+          
+                 
+        </a>
+        <hr>
+      <% }) %>
+      
+        
+        <a href="/disciplinasVersoes/creatingdisciplinaVersao">Criar nova Versão de Disciplina</a>
+        
+      </div>
+    </div>
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

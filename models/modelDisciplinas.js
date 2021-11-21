@@ -24,16 +24,17 @@ exports.searchDisciplinas = async () => {
         
     });    
     
+   
     return allDisciplinas;
     
 }
 
 exports.searchDisciplina = async (disciplinaId) => {
-    
+   
     const disciplina = await db.Disciplina.findOne({
         where: disciplinaId,
         include: [
-            'conhecimentoArea'
+            'ConhecimentoArea'
         ],   
                 
     });    
