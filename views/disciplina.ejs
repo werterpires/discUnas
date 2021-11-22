@@ -27,6 +27,20 @@
         <div class="egressosPerfis">
         </div>  
       </div>
+      <div class="versoesCards">
+        <% disciplina.DisciplinaVersao.forEach(versao => { %>
+          <a href="/disciplinasVersoes/<%= versao.disciplinaVersaoId %>">
+          <div class="versaoCard">
+            
+              <div> Versao: <%= versao.disciplinaVersaoNome %></div>              
+              <div> Sigla <%= versao.sigla %></div> </br></br>
+              <div> Código<%= versao.codigo %> </div>
+            
+          </div>
+          </a>
+        <% }) %>
+         
+      </div>
     </div>
 
     <footer>

@@ -10,12 +10,12 @@ exports.createDisciplinaVersao = async (sigla, codigo, disciplinaId, creditoQuan
        
     const { disciplinaNome } = disciplina;
     
-    const pontosDecortes = Math.round(disciplinaNome.length/6);
+    const pontosDecortes = Math.round(disciplinaNome.length/5);
 
-    const nomeBase = ["A", "L", "U", "N", "A"];
+    const nomeBase = ["L", "U", "N", "A"];
 
-    for(idx = 0; idx < 5; idx++){
-        if (disciplinaNome[idx*pontosDecortes] != undefined){
+    for(idx = 0; idx < 4; idx++){
+        if (disciplinaNome[idx*pontosDecortes] != undefined && disciplinaNome[idx*pontosDecortes] != " "){
             nomeBase[idx] = disciplinaNome[idx*pontosDecortes]
         }
     } 
@@ -30,7 +30,7 @@ exports.createDisciplinaVersao = async (sigla, codigo, disciplinaId, creditoQuan
         versoesExistentesQuant = versoesExistentes.length+1
     }
 
-    const disciplinaVersaoNome = disciplinaId+nomeBase[0]+nomeBase[1]+nomeBase[2]+nomeBase[3]+creditoQuantidade+nomeBase[4]+versoesExistentesQuant
+    const disciplinaVersaoNome = disciplinaId+nomeBase[0]+nomeBase[1]+nomeBase[2]+nomeBase[3]+versoesExistentesQuant+"-"+creditoQuantidade
     
     const disciplinaVersao = await modelDisciplinasVersoes.createDisciplinaVersao(disciplinaVersaoNome, sigla, codigo, disciplinaId, creditoQuantidade, ementa, basicBibliografia, compBibliografia, observacao, emOferta, produzido);
     

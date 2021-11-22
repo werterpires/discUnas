@@ -34,11 +34,12 @@ exports.searchDisciplina = async (disciplinaId) => {
     const disciplina = await db.Disciplina.findOne({
         where: disciplinaId,
         include: [
-            'ConhecimentoArea'
+            'ConhecimentoArea', 'DisciplinaVersao'
         ],   
                 
     });    
     
+    console.log(disciplina)
     return disciplina;
     
 }
