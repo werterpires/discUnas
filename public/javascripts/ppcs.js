@@ -26,7 +26,7 @@ iconesDeMenu.forEach(icone => {
 
 });
 
-
+//botões da view de cirar PPC
 
 addBotaoPerfil.addEventListener("mouseover", function(evento) {
     addBotaoPerfil.style.transform = "scale(1.2)"
@@ -37,10 +37,7 @@ addBotaoPerfil.addEventListener("mouseout", function(evento) {
 })
 
 addBotaoPerfil.addEventListener("click", function(evento) {
-    
-    
-    perfilEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='perfilNumero' id='perfilNumero' class='perfilInput'> Perfil: <input type='text' name='perfil' id='perfil' class='perfilInput'> </div>") ;
-    console.log(perfilEspaco)
+    perfilEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='perfilNumero' id='perfilNumero' class='perfilInput'> Perfil: <input type='text' name='perfil' id='perfil' class='perfilInput'> </div>")
 })
 
 addBotaoCompetHabilidade.addEventListener("mouseover", function(evento) {
@@ -52,8 +49,7 @@ addBotaoCompetHabilidade.addEventListener("mouseout", function(evento) {
 })
 
 addBotaoCompetHabilidade.addEventListener("click", function(evento) {
-    
-    
-    competHabilidadeEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='competHabilidadeNumero' id='competHabilidadeNumero' class='competHabilidadeInput'> Competência/Habilidade: <input type='text' name='competHabilidade' id='competHabilidade' class='competHabilidadeInput'> </div>") ;
-    console.log(perfilEspaco)
+    competHabilidadeEspaco.insertAdjacentHTML("beforeend", "<div> Numero: <input type='text' name='competHabilidadeNumero' id='competHabilidadeNumero' class='competHabilidadeInput'> Competência/Habilidade: <input type='text' name='competHabilidade' id='competHabilidade' class='competHabilidadeInput'> </div>");
 })
+
+

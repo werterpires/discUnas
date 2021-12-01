@@ -4,7 +4,7 @@ const controllerCursosPlanosPedagogicos = require("../controllers/controllerCurs
 const controllerCursos = require("../controllers/controllerCursos");
 const controllerEgressosPerfis = require("../controllers/controllerEgressosPerfis");
 const controllerCompetHabilidades = require("../controllers/controllerCompetHabilidades");
-
+const controllerDisciplinas = require("../controllers/controllerDisciplinas")
 
 router.get('/', async function(req, res, next) {
   
@@ -39,13 +39,17 @@ router.post('/createppc', async function(req, res, next) {
 router.get('/:ppcId',  async function(req, res, next) {
 
   const ppcId = req.params
+
   
   const ppc = await controllerCursosPlanosPedagogicos.searchPPC(ppcId)
   
-  res.render('PPC', { ppc });
+  const disciplinas = await controllerDisciplinas.searchDisciplinas()
+  
+ 
+
+  res.render('PPC', { ppc, disciplinas });
     
 });
-
 
 
 module.exports = router;

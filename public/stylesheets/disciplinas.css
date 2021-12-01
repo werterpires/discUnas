@@ -1,0 +1,24 @@
+#disciplinaNomeTop{
+  width: 30vw;
+}
+#disciplinaNome{
+  width: 30vw;
+}
+
+
+
+.versoesCards{
+    padding-top: 2px;
+    display: flex;
+
+}
+
+.versaoCard{
+  border: black solid 0.5px;
+  border-radius: 10px;
+  width: 15vw;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 2px 1px 2px ;
+}
+ 

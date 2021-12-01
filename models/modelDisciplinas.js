@@ -16,7 +16,7 @@ exports.searchDisciplinas = async () => {
     
     const allDisciplinas = await db.Disciplina.findAll({
         include: [
-            'ConhecimentoArea'
+            'ConhecimentoArea', 'DisciplinaVersao'
         ],   
         order: [
             ["disciplinaNome"]
@@ -39,7 +39,7 @@ exports.searchDisciplina = async (disciplinaId) => {
                 
     });    
     
-    console.log(disciplina)
+    
     return disciplina;
     
 }

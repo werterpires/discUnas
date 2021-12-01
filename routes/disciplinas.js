@@ -13,6 +13,7 @@ router.get('/', async function(req, res, next) {
 
 });
 
+
 router.get('/creatingdisciplina', async function(req, res, next) {
 
   const allconhecimentoAreas = await controllerConhecimentoAreas.searchConhecimentoAreas();
@@ -27,15 +28,12 @@ router.post('/createdisciplina', async function(req, res, next) {
   
   const disciplinaCriada = await controllerDisciplinas.createDisciplina(disciplinaNome, conhecimentoAreaId);
 
-  //const {ppcId} = ppcCriado;
   
-  //await controllerEgressosPerfis.createPerfil(perfilNumero, perfil, ppcId)
-  //await controllerCompetHabilidades.createCompetHabilidade(competHabilidadeNumero, competHabilidade, ppcId)
   
   res.redirect('/disciplinas');
 });
 
-router.get('/:disciplinaId',  async function(req, res, next) {
+router.get('/info/:disciplinaId',  async function(req, res, next) {
 
   const disciplinaId = req.params
   
@@ -43,6 +41,18 @@ router.get('/:disciplinaId',  async function(req, res, next) {
   
   res.render('disciplina', { disciplina });
     
+});
+
+
+//--------------------------------------------------------------------------------------------------------
+
+
+router.get('/api', async function(req, res, next) {
+  
+  const allDisciplinas = await controllerDisciplinas.searchDisciplinas();
+  
+  res.json(allDisciplinas);
+
 });
 
 

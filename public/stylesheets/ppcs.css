@@ -67,3 +67,140 @@
 .numero{
   width: 3vw;
 }
+
+.semestres{
+  display:flex;
+  flex-wrap: wrap
+  
+}
+
+.semestre{
+  width: 44vw;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.disciplinasNomesLista{
+  display: flex;
+  flex-direction: column;
+  border: black 1px solid;
+  height: 50vh;
+  position: fixed;
+  bottom: 10vh;
+  left: 25vw;
+  overflow-y: scroll; 
+  z-index: 2;
+  background-color: #c2c2c2;
+  width: 24vw;
+}
+
+.disciplinaSearchDiv{
+  
+  width: 20vw;
+  
+}
+
+.disciplinaSearch{
+  width: 14vw;
+
+}
+
+label{
+  width: 5vw;
+}
+
+.disciplinasVersoesNomesLista{
+  display: flex;
+  flex-direction: column;
+  border: black 1px solid;
+  height: 50vh;
+  position: fixed;
+  bottom: 10vh;
+  left: 50vw;
+  overflow-y: scroll; 
+  z-index: 2;
+  background-color: #c2c2c2;
+  width: 25vw;
+}
+
+#oferta1{
+  background-color: rgb(147, 206, 88);
+}
+
+#oferta0{
+  background-color:rgb(165, 131, 69);
+}
+
+.disciplinasVersoesDetalhes{
+  display: flex;
+  flex-direction: column;
+  border: black 1px solid;
+  height: 50vh;
+  position: fixed;
+  bottom: 10vh;
+  left: 75vw;
+  overflow-y: scroll; 
+  z-index: 2;
+  background-color: #c2c2c2;
+  width: 23vw;
+}
+
+.fecharBotao1{
+  width: 2vw;
+  height: 2vw;
+  position: fixed;
+  bottom: 60vh;
+  left: 47vw;
+  z-index: 2;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fecharBotao2{
+  width: 2vw;
+  height: 2vw;
+  position: fixed;
+  bottom: 60vh;
+  left: 73vw;
+  z-index: 2;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fecharBotao3{
+  width: 2vw;
+  height: 2vw;
+  position: fixed;
+  bottom: 60vh;
+  left: 96vw;
+  z-index: 2;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fecharImagem{
+  height: 2vw;
+}
+
+.esmaecimento{
+  background-color: gray;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 66%;
+}
+
+.disciplinaIndividualDiv{
+  display: flex;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/disciplinas.css' />
+        <script defer src="/javascripts/disciplinas.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        
+          <div class="cabecalho">
+            <p class="info1"> Disciplina: <%=disciplinaVersao.Disciplina.disciplinaNome %> </p>
+          </div>
+          
+          <hr>
+        
+      </div>
+      <div class="secundario">
+        <div class="egressosPerfis">
+        </div>  
+      </div>
+     
+    </div>
+
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>

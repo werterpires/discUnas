@@ -3,8 +3,10 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel='stylesheet' href='/stylesheets/ppcs.css' />
-        <script defer src="/javascripts/ppcs.js"></script>
+      
+        <script defer src="/javascripts/ppc.js"></script>
   </head>
   <body>
 
@@ -32,6 +34,7 @@
           <% ppc.EgressoPerfil.forEach(perfil =>{ %>
             
             <div class="egressoPerfil">
+              
               <div class="numero"> <%= perfil.perfilNumero %>: </div>  <div> <%= perfil.perfil %> </div> 
             </div>
 
@@ -48,8 +51,45 @@
           <% }) %>
         </div>
       </div>
-    </div>
+      <div>
+        
+        <h4>Adicionar disciplinas</h4>
+        <div class="semestres">
+          <% for(idx=0;idx < 3; idx++){ %>
+            
+            <div class="semestre">
+             Semestre <%= idx+1 %><br>
+                <div class="disciplinasExistentesDiv">
+                  <% ppc.dataValues.RelacaoDisciplinaVersaoPPC.forEach(relacao => { %>
+                    <div class="disciplinaIndividualDiv">
+                      <div> <%= relacao.DisciplinaVersao.Disciplina.disciplinaNome %> </div>
+                      <div> <%= relacao.DisciplinaVersao.creditoQuantidade %> </div>
+                    </div>
+                <% }) %>
+                </div>
+                <div class="disciplinaSearchDiv">
 
+                  <form action=""> 
+                    <label for="disciplinaNome"> Disciplina:</label>
+                     <input type="search" class="disciplinaSearch" name="disciplinaNome" id="disciplinaNome" autocomplete="off">  
+                     <input type="number" class="hidden" name="semestre" id="semestre" value= <%= idx+1 %>>  
+                     <input type="ppcId" class="hidden" name="ppcId" id="ppcId" value= <%= ppc.ppcId %>>  
+
+                  </form> 
+                </div>  
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="divSuspensaContainer">
+        <div class="esmaecimento hidden"></div>
+        <div class="disciplinasNomesLista hidden"></div>
+        <div class="disciplinasVersoesNomesLista hidden"></div>
+        <div class="disciplinasVersoesDetalhes hidden"></div>
+      </div>
+    </div>
+    
+    
     <footer>
       Aqui só ficará groselhinha
     </footer>

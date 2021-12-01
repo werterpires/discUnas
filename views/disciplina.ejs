@@ -3,7 +3,8 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/disciplina.css' />
+        <link rel='stylesheet' href='/stylesheets/disciplinas.css' />
+        
         <script defer src="/javascripts/disciplinas.js"></script>
   </head>
   <body>
@@ -29,11 +30,12 @@
       </div>
       <div class="versoesCards">
         <% disciplina.DisciplinaVersao.forEach(versao => { %>
-          <a href="/disciplinasVersoes/<%= versao.disciplinaVersaoId %>">
+          <a href="/disciplinasVersoes/info/<%= versao.disciplinaVersaoId %>">
           <div class="versaoCard">
             
               <div> Versao: <%= versao.disciplinaVersaoNome %></div>              
-              <div> Sigla <%= versao.sigla %></div> </br></br>
+              <div> Sigla: <%= versao.sigla %></div> 
+              <div> Créditos: <%= versao.creditoQuantidade %></div></br></br>
               <div> Código<%= versao.codigo %> </div>
             
           </div>

@@ -1,36 +1,34 @@
 module.exports = (sequelize, DataTypes) => {
   const CursoPlanoPedagogicoDisciplinaVersao = sequelize.define('CursoPlanoPedagogicoDisciplinaVersao', {
-    ppcId: {
+    ppcDisciplinaVersaoId: {
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       autoIncrement: true,
     },
-    votoAno:{
-      type: DataTypes.DATEONLY,
-      allowNull: true,
-    },
-    inicioData:{
-      type: DataTypes.DATEONLY,
-      allowNull: true,
-    },
-    fimData:{
-      type: DataTypes.DATEONLY,
-      allowNull: true,
-    },
-    horaCredito:{
-      type: DataTypes.TIME,
-      allowNull: true,
-    },
-    cursoId:{
+    disciplinaVersaoId:{
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: "cursos",
-        key: "cursoId",
+        model: "disciplinasVersoes",
+        key: "disciplinaVersaoId",
       },
-      onUpdate: "cascade",
+      onUpdate: "no action",
       onDelete: "cascade",
+    },
+    ppcId:{
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: "cursosPlanosPedagogicos",
+        key: "ppcId",
+      },
+      onUpdate: "no action",
+      onDelete: "cascade",
+    },
+    semestre:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     
   },
@@ -41,10 +39,12 @@ module.exports = (sequelize, DataTypes) => {
   CursoPlanoPedagogicoDisciplinaVersao.associate = (models) => {
     
     CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.DisciplinaVersao, {
-      foreignKey: 'disciplinaVersaoId'
+      foreignKey: 'disciplinaVersaoId',
+      as: 'DisciplinaVersao'
     }),
     CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.CursoPlanoPedagogico, {
-      foreignKey: 'ppcId'
+      foreignKey: 'ppcId',
+      as: 'CursoPlanoPedagógico'
     })  
   }
 

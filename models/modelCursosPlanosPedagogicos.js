@@ -34,10 +34,19 @@ exports.searchPPC = async (ppcId) => {
     const ppc = await db.CursoPlanoPedagogico.findOne({
         where: ppcId,
         include: [
-            'Curso', 'CompetHabilidade', 'EgressoPerfil'
-        ],   
+            'Curso', 'CompetHabilidade', 'EgressoPerfil', {model: db.CursoPlanoPedagogicoDisciplinaVersao, as: "RelacaoDisciplinaVersaoPPC", include:[
+                {model: db.DisciplinaVersao, as: "DisciplinaVersao", include: [
+                    {model: db.Disciplina}
+                ]}
+            ]}
+        ]
+                    
                 
     });    
+    
+    ppc.dataValues.RelacaoDisciplinaVersaoPPC.forEach(relacao => {
+        console.log(relacao.DisciplinaVersao.Disciplina.disciplinaNome)
+    })
     
     return ppc;
     

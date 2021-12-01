@@ -1,0 +1,73 @@
+#disciplinaNomeTop{
+  width: 30vw;
+}
+#disciplinaNome{
+  width: 30vw;
+}
+
+#disciplinaVersaoNomeTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#disciplinaVersaoNome{
+  width: 8vw;
+  text-align: center;
+
+}
+
+#siglaTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#sigla{
+  width: 8vw;
+  text-align: center;
+
+}
+
+#codigoTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#codigo{
+  width: 8vw;
+  text-align: center;
+
+}
+
+#creditoQuantidadeTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#creditoQuantidade{
+  width: 8vw;
+  text-align: center;
+
+}
+
+#emOfertaTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#emOferta{
+  width: 8vw;
+  text-align: center;
+
+}
+
+#produzidoTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#produzido{
+  width: 8vw;
+  text-align: center;
+
+}
+

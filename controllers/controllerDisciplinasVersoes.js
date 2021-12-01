@@ -24,8 +24,7 @@ exports.createDisciplinaVersao = async (sigla, codigo, disciplinaId, creditoQuan
 
     const versoesExistentes = await modelDisciplinasVersoes.searchDisciplinasVersoesPorDisciplina(disciplinaId);
 
-    console.log("Tamanho:", versoesExistentes)
-    
+       
     if(versoesExistentes !== null){
         versoesExistentesQuant = versoesExistentes.length+1
     }

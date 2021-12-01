@@ -22,7 +22,7 @@
 
         
       <% allDisciplinas.forEach(disciplina => { %>
-        <a class="colunaDaTabela" href="/disciplinas/<%= disciplina.disciplinaId %>" >
+        <a class="colunaDaTabela" href="/disciplinas/info/<%= disciplina.disciplinaId %>" >
           <div class="itemDaColunaDaTabela" id="cursoNome"> <%=disciplina.disciplinaNome %> </div>
           <div class="itemDaColunaDaTabela" id="votoAno"> <%=disciplina.ConhecimentoArea.conhecimentoArea %> </div>                 
         </a>
@@ -31,6 +31,7 @@
       
         
         <a href="/disciplinas/creatingdisciplina">Criar nova disciplina</a>
+        <a href="/disciplinasVersoes/creatingdisciplinaVersao">Criar nova Versão de Disciplina</a>
         
       </div>
     </div>

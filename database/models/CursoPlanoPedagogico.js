@@ -49,8 +49,12 @@ module.exports = (sequelize, DataTypes) => {
     CursoPlanoPedagogico.hasMany(models.CompetHabilidade, {
       foreignKey: 'ppcId',
       as: "CompetHabilidade"
+    }),
+    CursoPlanoPedagogico.hasMany(models.CursoPlanoPedagogicoDisciplinaVersao, {
+      foreignKey: 'ppcId',
+      as: "RelacaoDisciplinaVersaoPPC"
     })
-  
+    
   }
   
   return CursoPlanoPedagogico;

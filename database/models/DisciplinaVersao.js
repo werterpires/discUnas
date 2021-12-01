@@ -70,7 +70,7 @@ module.exports = (sequelize, DataTypes) => {
 
     DisciplinaVersao.hasMany(models.CursoPlanoPedagogicoDisciplinaVersao, {
       foreignKey: 'disciplinaVersaoId',
-      as: "disciplinaVersao"
+      as: "RelacaoDisciplinaVersaoPPC"
     })
     
   }
