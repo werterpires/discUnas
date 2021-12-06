@@ -93,7 +93,7 @@
   overflow-y: scroll; 
   z-index: 2;
   background-color: #c2c2c2;
-  width: 24vw;
+  width: 25vw;
 }
 
 .disciplinaSearchDiv{
@@ -137,7 +137,7 @@ label{
   display: flex;
   flex-direction: column;
   border: black 1px solid;
-  height: 50vh;
+  height: 48vh;
   position: fixed;
   bottom: 10vh;
   left: 75vw;
@@ -145,6 +145,7 @@ label{
   z-index: 2;
   background-color: #c2c2c2;
   width: 23vw;
+  padding: 1vh;
 }
 
 .fecharBotao1{
@@ -177,7 +178,7 @@ label{
   width: 2vw;
   height: 2vw;
   position: fixed;
-  bottom: 60vh;
+  bottom: 61vh;
   left: 96vw;
   z-index: 2;
   background-color: red;
@@ -203,4 +204,18 @@ label{
 
 .disciplinaIndividualDiv{
   display: flex;
+}
+
+.colunaDupla{
+  display: flex;
+  justify-content: space-between;
+}
+
+.creditoTexto{
+  margin-left: 0.5vw;
+}
+
+.legendaTexto{
+  font-size: 0.6rem;
+  font-weight: bold;
 }

@@ -14,9 +14,12 @@ router.get('/', async function(req, res, next) {
 
 router.post('/createrelacaoDisciplinasVersoesPPCs', async function(req, res, next) {
   
-  const{disciplinaVersaoId, ppcId, semestre } = req.body;
+  const {disciplinaVersaoId, ppcId, semestre} = req.body;
+  let {paginaURL } = req.body;
   
   const relacaoCriada = await controllerCursosPlanosPedagogicosDisciplinasVersoes.createRelacaoDisciplinaVersaoPPC(disciplinaVersaoId, ppcId, semestre);
+  
+  res.json(relacaoCriada);
   
 });
 

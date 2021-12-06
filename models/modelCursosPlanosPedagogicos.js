@@ -45,7 +45,7 @@ exports.searchPPC = async (ppcId) => {
     });    
     
     ppc.dataValues.RelacaoDisciplinaVersaoPPC.forEach(relacao => {
-        console.log(relacao.DisciplinaVersao.Disciplina.disciplinaNome)
+        
     })
     
     return ppc;

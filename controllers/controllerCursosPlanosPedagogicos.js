@@ -17,6 +17,17 @@ exports.searchPPCs =  async() => {
 exports.searchPPC =  async(ppcId) => {
     const ppc =  await modelCursosPlanosPedagogicos.searchPPC(ppcId);
     
+       
+    let creditosTotal = [0,0,0,0,0,0,0,0,0,0]
+    
+
+    for(idx = 0; idx < ppc.RelacaoDisciplinaVersaoPPC.length; idx++){
+        creditosTotal[ppc.RelacaoDisciplinaVersaoPPC[idx].semestre - 1] += ppc.RelacaoDisciplinaVersaoPPC[idx].DisciplinaVersao.creditoQuantidade;
+       
+    }
+
+    ppc.creditosTotal = creditosTotal;
+
     return ppc;
     
 }

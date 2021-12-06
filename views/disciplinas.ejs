@@ -23,8 +23,8 @@
         
       <% allDisciplinas.forEach(disciplina => { %>
         <a class="colunaDaTabela" href="/disciplinas/info/<%= disciplina.disciplinaId %>" >
-          <div class="itemDaColunaDaTabela" id="cursoNome"> <%=disciplina.disciplinaNome %> </div>
-          <div class="itemDaColunaDaTabela" id="votoAno"> <%=disciplina.ConhecimentoArea.conhecimentoArea %> </div>                 
+          <div class="itemDaColunaDaTabela" id="disciplinaNome"> <%=disciplina.disciplinaNome %> </div>
+          <div class="itemDaColunaDaTabela" id="conhecimentoArea"> <%=disciplina.ConhecimentoArea.conhecimentoArea %> </div>                 
         </a>
         <hr>
       <% }) %>

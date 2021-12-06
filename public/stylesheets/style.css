@@ -123,11 +123,7 @@ hr {
   visibility: hidden;
 }
 
-.addbotaoPerfil {
-  width: 3vw;
-}
-
-.addbotaoCompetHabilidade {
+.addBotao {
   width: 3vw;
 }
 
@@ -147,3 +143,9 @@ p{
 button{
   margin: 2px;
 }
+
+.total{
+ 
+  font-size: 1.3em;
+}
+
