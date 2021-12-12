@@ -264,7 +264,7 @@ async function cadastrarRelacao(){
     <a class="colunaDaTabela" href="/PPCs/" >
         <div class="itemDaColunaDaTabela" id="disciplinaNome"> ${disciplina[0].disciplinaNome} </div>
         <div class="itemDaColunaDaTabela" id="creditoQuantidade">${disciplinaVersao[0].creditoQuantidade} </div>     
-  </a>`);
+    </a>`);
     
 
 }

@@ -45,7 +45,12 @@ module.exports = (sequelize, DataTypes) => {
     CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.CursoPlanoPedagogico, {
       foreignKey: 'ppcId',
       as: 'CursoPlanoPedagógico'
-    })  
+    }),
+    CursoPlanoPedagogicoDisciplinaVersao.belongsToMany(models.EgressoPerfil, {
+      foreignKey: 'egressoPerfilId',
+      as: 'EgressoPerfil',
+      through: 'DisciplinaVersaoEgressoPerfil'
+    })
   }
 
   

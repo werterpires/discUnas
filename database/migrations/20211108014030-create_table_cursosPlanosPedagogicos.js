@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull: true,
       },
+      semestreQuantidade:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       horaCredito:{
         type: Sequelize.TIME,
         allowNull: true,

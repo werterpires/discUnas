@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
+    semestreQuantidade:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     horaCredito:{
       type: DataTypes.TIME,
       allowNull: true,

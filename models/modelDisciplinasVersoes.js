@@ -36,7 +36,16 @@ exports.searchDisciplinaVersao = async (disciplinaVersaoId) => {
     const disciplinaVersao = await db.DisciplinaVersao.findOne({
         where: disciplinaVersaoId,
         include: [
-            'Disciplina'
+            'Disciplina', {
+                model: db.CursoPlanoPedagogicoDisciplinaVersao, as: "RelacaoDisciplinaVersaoPPC", include: [
+                    {
+                       model: db.EgressoPerfil, as: "EgressoPerfil" 
+                    },
+                    {
+                        model: db.CursoPlanoPedagogico, as: "CursoPlanoPedagogico" 
+                     }
+                ] 
+            }
         ],   
                 
     });    

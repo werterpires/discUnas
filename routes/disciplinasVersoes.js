@@ -41,15 +41,4 @@ router.get('/info/:disciplinaVersaoId',  async function(req, res, next) {
     
 });
 
-//---------------------------------------------------------------------------------------
-
-router.get('/info/:disciplinaVersaoId',  async function(req, res, next) {
-
-  const disciplinaVersaoId = req.params
-  
-  const disciplinaVersao = await controllerDisciplinasVersoes.searchdisciplinaVersao(disciplinaVersaoId)
-  
-  res.json(disciplinaVersao);
-    
-});
 module.exports = router;

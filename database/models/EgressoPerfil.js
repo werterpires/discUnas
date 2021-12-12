@@ -1,3 +1,5 @@
+const CursoPlanoPedagogicoDisciplinaVersao = require("./CursoPlanoPedagogicoDisciplinaVersao");
+
 module.exports = (sequelize, DataTypes) => {
   const EgressoPerfil = sequelize.define('EgressoPerfil', {
     perfilId: {
@@ -33,8 +35,13 @@ module.exports = (sequelize, DataTypes) => {
   EgressoPerfil.associate = (models) => {
     EgressoPerfil.belongsTo(models.CursoPlanoPedagogico, {
       foreignKey: 'ppcId',
+    }),
+    
+    EgressoPerfil.belongsTo(models.CursoPlanoPedagogicoDisciplinaVersao, {
+      foreignKey: 'ppcDisciplinaVersaoId',
+      as: CursoPlanoPedagogicoDisciplinaVersao,
+      through:'DisciplinaVersaoEgressoPerfil'      
     })
-  
   }
 
   
