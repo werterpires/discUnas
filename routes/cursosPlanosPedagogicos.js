@@ -43,9 +43,11 @@ router.get('/:ppcId',  async function(req, res, next) {
   
   const ppc = await controllerCursosPlanosPedagogicos.searchPPC(ppcId)
   
+  console.log(ppc)
+
   const disciplinas = await controllerDisciplinas.searchDisciplinas()
   
- 
+  
 
   res.render('PPC', { ppc, disciplinas });
     
