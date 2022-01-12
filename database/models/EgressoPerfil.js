@@ -29,18 +29,19 @@ module.exports = (sequelize, DataTypes) => {
     
     
   },{
-    tableName: "egressosPerfis"
+    tableName: "egressosperfis"
   });
 
   EgressoPerfil.associate = (models) => {
     EgressoPerfil.belongsTo(models.CursoPlanoPedagogico, {
+      as: 'CursoPlanoPedagogico',
       foreignKey: 'ppcId',
     }),
 
     EgressoPerfil.belongsToMany(models.CursoPlanoPedagogicoDisciplinaVersao, {
-      foreignKey: 'ppcDisciplinaVersaoId',
+      foreignKey: 'egressoPerfilId',
       as: 'CursoPlanoPedagogicoDisciplinaVersao',
-      through:'DisciplinaVersaoEgressoperfil'
+      through:'disciplinasversoesegressosperfis'
     })
     
     

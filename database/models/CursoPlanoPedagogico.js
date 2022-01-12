@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     
   },
   {
-    tableName: "cursosPlanosPedagogicos"
+    tableName: "cursosplanospedagogicos"
   });
 
   CursoPlanoPedagogico.associate = (models) => {

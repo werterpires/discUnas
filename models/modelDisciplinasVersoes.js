@@ -50,6 +50,7 @@ exports.searchDisciplinaVersao = async (disciplinaVersaoId) => {
                 
     });    
     
+    console.log(disciplinaVersao.RelacaoDisciplinaVersaoPPC[0].EgressoPerfil)
     return disciplinaVersao;
     
 }

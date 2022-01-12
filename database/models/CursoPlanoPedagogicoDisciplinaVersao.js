@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     
   },
   {
-    tableName: "cursosPlanosPedagogicosDisciplinasVersoes"
+    tableName: "cursosplanospedagogicosdisciplinasversoes"
   });
 
   CursoPlanoPedagogicoDisciplinaVersao.associate = (models) => {
@@ -44,12 +44,12 @@ module.exports = (sequelize, DataTypes) => {
     }),
     CursoPlanoPedagogicoDisciplinaVersao.belongsTo(models.CursoPlanoPedagogico, {
       foreignKey: 'ppcId',
-      as: 'CursoPlanoPedagógico'
+      as: 'CursoPlanoPedagogico'
     }),
     CursoPlanoPedagogicoDisciplinaVersao.belongsToMany(models.EgressoPerfil, {
-      foreignKey: 'egressoPerfilId',
+      foreignKey: 'ppcDisciplinaVersaoId',
       as: 'EgressoPerfil',
-      through: 'DisciplinaVersaoEgressoPerfil'
+      through: 'disciplinasversoesegressosperfis'
     })
   }
 

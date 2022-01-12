@@ -17,6 +17,27 @@ exports.createPerfil = async (perfilNumero, perfil, ppcId) => {
     }
 };
 
+exports.searchPerfil = async (perfilId) => {
+    
+ 
+
+    const perfil = await db.EgressoPerfil.findOne({
+        where: {perfilId},
+        order: [
+            ['perfilNumero', 'ASC']
+        ],
+        include: [
+            'CursoPlanoPedagogico', 'CursoPlanoPedagogicoDisciplinaVersao'
+        ]   
+    });
+    
+    
+    
+    return perfil;
+    
+
+}
+
 exports.searchPPCPerfis = async (ppcId) => {
     
     const allPPCPerfis = await db.EgressoPerfil.findAll({

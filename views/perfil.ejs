@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/cursos.css' />
+        <script defer src="/javascripts/cursos.js"></script>
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menusDePaginas.ejs') %>
+
+    <div class="container">
+      <div class="princiapl">
+        
+          <div><p>Perfil: <%= perfil.perfil %></p></p></div>
+            
+         
+          <hr>
+
+      </div>
+        
+      <div>
+        
+        <%= perfil.CursoPlanoPedagogico.votoAno %>
+         
+      </div>
+    </div>
+    <footer>
+      Aqui só ficará groselhinha
+    </footer>
+    
+  </body>
+</html>
