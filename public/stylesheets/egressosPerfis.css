@@ -1,0 +1,73 @@
+#nomeCursoTop{
+  width: 30vw;
+}
+#nomeCurso{
+  width: 30vw;
+}
+
+#ativoTop{
+  width: 8vw;
+  text-align: center;
+}
+
+#ativo{
+  width: 8vw;
+  text-align: center;
+
+}
+
+.disciplinasCards{
+    padding-top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardContainer{
+  display: flex;
+  border-top: black 2px solid;
+  
+}
+
+.disciplinaCard{
+  position: relative;
+  bottom: 9vh;
+  left: 10vw;
+  border: black solid 0.5px;
+  border-radius: 10px;
+  width: 10vw;
+  height: 12vh;
+  margin: 5px;
+  margin-right: 5vw;
+  
+  padding: 5px;
+  box-shadow: 2px 1px 2px ;
+  background-color: burlywood;
+}
+ 
+.contador1{
+  border-top: 0px;
+  
+}
+.primeiro{
+  border-right: 2px black solid;
+}
+
+.contador5{
+  border-right: black 2px solid;
+}
+
+
+
+
+.disciplinaCardNulo{
+  
+  
+  width: 10vw;
+  height: 10vh;
+  margin: 5px;
+  margin-right: 5.14vw;
+  padding: 5px;
+  
+  
+}
+

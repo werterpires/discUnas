@@ -50,6 +50,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'ppcDisciplinaVersaoId',
       as: 'EgressoPerfil',
       through: 'disciplinasversoesegressosperfis'
+    }),
+    CursoPlanoPedagogicoDisciplinaVersao.belongsToMany(models.CompetHabilidade, {
+      foreignKey: 'ppcDisciplinaVersaoId',
+      as: 'CompetHabilidade',
+      through: 'disciplinasversoescompethabilidades'
     })
   }
 

@@ -91,7 +91,7 @@
   bottom: 10vh;
   left: 25vw;
   overflow-y: scroll; 
-  z-index: 2;
+  z-index: 3;
   background-color: #c2c2c2;
   width: 25vw;
 }
@@ -120,7 +120,7 @@ label{
   bottom: 10vh;
   left: 50vw;
   overflow-y: scroll; 
-  z-index: 2;
+  z-index: 3;
   background-color: #c2c2c2;
   width: 25vw;
 }
@@ -142,7 +142,7 @@ label{
   bottom: 10vh;
   left: 75vw;
   overflow-y: scroll; 
-  z-index: 2;
+  z-index: 3;
   background-color: #c2c2c2;
   width: 23vw;
   padding: 1vh;
@@ -154,7 +154,7 @@ label{
   position: fixed;
   bottom: 60vh;
   left: 47vw;
-  z-index: 2;
+  z-index: 3;
   background-color: red;
   margin: 0;
   padding: 0;
@@ -167,7 +167,7 @@ label{
   position: fixed;
   bottom: 60vh;
   left: 73vw;
-  z-index: 2;
+  z-index: 3;
   background-color: red;
   margin: 0;
   padding: 0;
@@ -180,7 +180,7 @@ label{
   position: fixed;
   bottom: 61vh;
   left: 96vw;
-  z-index: 2;
+  z-index: 3;
   background-color: red;
   margin: 0;
   padding: 0;
@@ -198,7 +198,7 @@ label{
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   opacity: 66%;
 }
 

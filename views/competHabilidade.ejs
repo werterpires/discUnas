@@ -3,7 +3,7 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/egressosPerfis.css' />
+        <link rel='stylesheet' href='/stylesheets/competHabilidades.css' />
         <script defer src="/javascripts/ppcs.js"></script>
   </head>
   <body>
@@ -14,22 +14,20 @@
     <div class="container">
       <div class="princiapl">
         
-          <div><p>Perfil: <%= perfil.perfil %></p></p></div>
-          <div><p>Curso: <%= perfil.CursoPlanoPedagogico.Curso.cursoNome %></p></p></div>
-            
-         
-          <hr>
+        <div><p>Competência/Habilidade: <%= competHabilidade.competHabilidade %></p></p></div>
+        <div><p>Curso: <%= competHabilidade.CursoPlanoPedagogico.Curso.cursoNome %></p></p></div>  
+        <hr>
 
       </div>
         
       <div>
         
-        Ano de voto do PPC:  <%= perfil.CursoPlanoPedagogico.votoAno %>
+        Ano de voto do PPC:  <%= competHabilidade.CursoPlanoPedagogico.votoAno %>
          
       </div>
       <div class="corpo disciplinasCards">
         <% let contador = 1 %> 
-        <% perfil.CursoPlanoPedagogicoDisciplinaVersao.forEach(relacao => { %>
+        <% competHabilidade.CursoPlanoPedagogicoDisciplinaVersao.forEach(relacao => { %>
           <% if(contador == 6){ %>
             
             <div class="primeiro cardContainer contador1 intermediario>"><div class="disciplinaCardNulo"></div></div>

@@ -42,7 +42,12 @@ exports.searchDisciplinaVersao = async (disciplinaVersaoId) => {
                        model: db.EgressoPerfil, as: "EgressoPerfil" 
                     },
                     {
-                        model: db.CursoPlanoPedagogico, as: "CursoPlanoPedagogico" 
+                        model: db.CompetHabilidade, as: "CompetHabilidade" 
+                     },
+                    {
+                        model: db.CursoPlanoPedagogico, as: "CursoPlanoPedagogico", include: [
+                            {model: db.Curso, as: "Curso"}
+                        ] 
                      }
                 ] 
             }
@@ -50,7 +55,8 @@ exports.searchDisciplinaVersao = async (disciplinaVersaoId) => {
                 
     });    
     
-    console.log(disciplinaVersao.RelacaoDisciplinaVersaoPPC[0].EgressoPerfil)
+    
+    
     return disciplinaVersao;
     
 }

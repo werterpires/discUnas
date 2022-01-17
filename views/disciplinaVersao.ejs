@@ -3,7 +3,7 @@
   <head>
     <title></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link rel='stylesheet' href='/stylesheets/disciplinas.css' />
+        <link rel='stylesheet' href='/stylesheets/disciplinasVersoes.css' />
         <script defer src="/javascripts/disciplinas.js"></script>
   </head>
   <body>
@@ -15,7 +15,60 @@
       <div class="princiapl">
         
           <div class="cabecalho">
-            <p class="info1"> Disciplina: <%=disciplinaVersao.Disciplina.disciplinaNome %> </p>
+            <p class="info1"> Disciplina: <a href= 'http://localhost:3000/disciplinas/info/<%=disciplinaVersao.Disciplina.disciplinaId %>'> <%=disciplinaVersao.Disciplina.disciplinaNome %> <a></p>
+            <p class="info1"> Nome da versão: <%=disciplinaVersao.disciplinaVersaoNome %> </p>
+            <p class="info1"> sigla: <%=disciplinaVersao.sigla %> </p>
+            <p class="info1"> Código: <%=disciplinaVersao.sigla %> </p>
+            <p class="info1"> Quantidade de créditos: <%=disciplinaVersao.creditoQuantidade %> </p><br>
+            <% if(disciplinaVersao.emOferta == 1){ %>  
+              <p> Disciplina em oferta  </p></br>
+            <% } else { %>
+              <p> Não está em oferta </p></br>
+            <% } %>
+
+            <% if(disciplinaVersao.produzido == 1){ %>  
+              <p> Disciplina Já produzida  </p></br>
+            <% } else { %>
+              <p> Disciplina ainda não produzida </p></br>
+            <% } %>
+                        
+          </div>
+          <div class="corpo1">
+            <div class="corpoDireito">
+              <p class="info1"> Ementa: <%=disciplinaVersao.ementa %> </p><br>
+              <p class="info1"> Observação: <%=disciplinaVersao.observacao %> </p><br>
+            </div>
+            <div class="corpoEsquerdo">
+              <p class="info1"> Bibliografia Básica: <%=disciplinaVersao.basicBibliografia %> </p><br>
+              <p class="info1"> Bibliografia complementar: <%=disciplinaVersao.compBibliografia %> </p><br>
+            </div>
+
+          </div>
+          <div class="corpo2">
+            <div class="ppcsCards">
+              <% disciplinaVersao.RelacaoDisciplinaVersaoPPC.forEach(ppc => { %>
+                <a href="/PPCs/<%= ppc.ppcId %>">
+                <div class="ppcCard">
+                  
+                    <div> Curso: <%= ppc.CursoPlanoPedagogico.Curso.cursoNome %></div>              
+                    <div> Votado em: <%= ppc.CursoPlanoPedagogico.votoAno %></div>              
+                    <div> <div>Quantidade de semestres:<%= ppc.CursoPlanoPedagogico.semestreQuantidade %> </div> Horas por crédito: <%= ppc.CursoPlanoPedagogico.horaCredito %></div> 
+                    <div> Semestre de oferta: <%= ppc.semestre %> </div> </br></br>
+                    <div> <%= ppc.CursoPlanoPedagogico.inicioData %> - <%= ppc.CursoPlanoPedagogico.fimData %> </div>
+                    <div> Pefis do egresso </div> </br>
+                    <% ppc.EgressoPerfil.forEach(perfil => { %>
+                      <div> <a href="/egressosPerfis/<%= perfil.perfilId %>"><%= perfil.perfilNumero %> - <%= perfil.perfil %></a></div>
+                    <% }) %> </br>
+                    <div> Competências/Habilidades </div> </br>
+                    <% ppc.CompetHabilidade.forEach(compet => { %>
+                      <div> <a href="/competHabilidades/<%= compet.competHabilidadeId %>"><%= compet.competHabilidadeNumero %> - <%= compet.competHabilidade %></a></div>
+                    <% }) %>
+                </div>
+                </a>
+              <% }) %>
+               
+            </div>
+
           </div>
           
           <hr>

@@ -1,3 +1,5 @@
+const CursoPlanoPedagogicoDisciplinaVersao = require("./CursoPlanoPedagogicoDisciplinaVersao");
+
 module.exports = (sequelize, DataTypes) => {
   const CompetHabilidade = sequelize.define('CompetHabilidade', {
     competHabilidadeId: {
@@ -26,11 +28,20 @@ module.exports = (sequelize, DataTypes) => {
     }
     
     
+  },{
+    tableName: "compethabilidades"
   });
 
   CompetHabilidade.associate = (models) => {
     CompetHabilidade.belongsTo(models.CursoPlanoPedagogico, {
+      as: 'CursoPlanoPedagogico',
       foreignKey: 'ppcId',
+    }),
+
+    CompetHabilidade.belongsToMany(models.CursoPlanoPedagogicoDisciplinaVersao, {
+      foreignKey: 'competHabilidadeId',
+      as: 'CursoPlanoPedagogicoDisciplinaVersao',
+      through:'disciplinasversoescompethabilidades'
     })
   
   }

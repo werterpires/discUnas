@@ -5,6 +5,7 @@ header {
   justify-content: space-between;
   position: sticky;
   top: 0px;
+  z-index:2;
   background-color: #f2f2f2;
 }
 
@@ -33,7 +34,6 @@ header {
   background-color: black;
   color: white;
   border-radius:15px;
-  
 }
 
 .botaoGrande {

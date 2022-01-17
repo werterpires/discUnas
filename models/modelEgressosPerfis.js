@@ -19,19 +19,30 @@ exports.createPerfil = async (perfilNumero, perfil, ppcId) => {
 
 exports.searchPerfil = async (perfilId) => {
     
- 
-
     const perfil = await db.EgressoPerfil.findOne({
         where: {perfilId},
         order: [
             ['perfilNumero', 'ASC']
         ],
         include: [
-            'CursoPlanoPedagogico', 'CursoPlanoPedagogicoDisciplinaVersao'
+            {
+                model: db.CursoPlanoPedagogico, as: "CursoPlanoPedagogico", include:[
+                    {model: db.Curso, as: "Curso"}
+                ]
+            }, 
+            {
+                model: db.CursoPlanoPedagogicoDisciplinaVersao, as: "CursoPlanoPedagogicoDisciplinaVersao", include:[
+                    {
+                        model: db.DisciplinaVersao, as: "DisciplinaVersao", include:[
+                            {model: db.Disciplina, as: "Disciplina"}
+                        ]
+                    }
+                ]
+            }
         ]   
     });
     
-    
+    console.log(perfil.CursoPlanoPedagogicoDisciplinaVersao[10].DisciplinaVersao)
     
     return perfil;
     
